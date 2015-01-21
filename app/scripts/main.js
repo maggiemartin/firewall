@@ -22,7 +22,7 @@ Parse.initialize("STaZjwg248AVhhW7hsrWTCEE9btscUOvFbpkAGS4", "PdlOWVl6Sx3O8eHZc1
     $('.Testing > section > dt > a').click(function() {
 
       allPanels.slideUp();
-
+      alert('hello');
       $(this).parent().next().slideDown();
 
       return false;

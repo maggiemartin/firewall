@@ -49,7 +49,7 @@ a{
   color: red;
 }
 }
-.items_accepted, .items_completed, .accepted, .completed{
+.items_accepted, .items_completed, .accepted, .complete{
   border: 1px solid green;
   margin-top: 10px;
   background: -moz-linear-gradient(left, rgba(237,241,234,1) 0%, rgba(237,241,234,1) 2%, rgba(237,241,234,1) 22%, rgba(252,252,252,1) 62%, rgba(255,255,255,1) 100%);
@@ -252,4 +252,7 @@ dd{
   left: 0;
 
   background-color: blue;
+}
+.bye{
+ background-color: yellow;
 }
