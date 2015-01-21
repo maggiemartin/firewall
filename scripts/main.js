@@ -105,14 +105,15 @@ var DateFormat={};!function(a){var b=["Sunday","Monday","Tuesday","Wednesday","T
 
         var allPanels = $('.Testing > section > dd').hide();
 
-
+        var allTiles = $('.Testing > section > dt > a > .tiles').show();
 
         $('.Testing > section > dt > a').click(function() {
 
           allPanels.slideUp();
+          allTiles.fadeIn(300);
 
           $(this).parent().next().slideDown();
-
+          $(this).find('.tiles').fadeOut(300);
           return false;
         });
 
@@ -222,7 +223,7 @@ Parse.initialize("STaZjwg248AVhhW7hsrWTCEE9btscUOvFbpkAGS4", "PdlOWVl6Sx3O8eHZc1
     $('.Testing > section > dt > a').click(function() {
 
       allPanels.slideUp();
-
+      alert('hello');
       $(this).parent().next().slideDown();
 
       return false;
