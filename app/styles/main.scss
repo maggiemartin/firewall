@@ -16,17 +16,19 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
 }
-.data-container{
-  background-color: yellow;
 
-
-}
 .body-container{
   width: 1100px;
-  border: 1px solid gray;
+  border: 1px solid #cbd5e2;
   padding: 10px;
   margin: 0 auto;
   margin-top: 50px;
+  background: -moz-linear-gradient(left, rgba(244,247,251,1) 0%, rgba(244,247,251,1) 2%, rgba(244,247,251,1) 22%, rgba(252,252,252,1) 62%, rgba(255,255,255,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(244,247,251,1)), color-stop(2%, rgba(244,247,251,1)), color-stop(22%, rgba(244,247,251,1)), color-stop(62%, rgba(252,252,252,1)), color-stop(100%, rgba(255,255,255,1)));
+  background: -webkit-linear-gradient(left, rgba(244,247,251,1) 0%, rgba(244,247,251,1) 2%, rgba(244,247,251,1) 22%, rgba(252,252,252,1) 62%, rgba(255,255,255,1) 100%);
+  background: -o-linear-gradient(left, rgba(244,247,251,1) 0%, rgba(244,247,251,1) 2%, rgba(244,247,251,1) 22%, rgba(252,252,252,1) 62%, rgba(255,255,255,1) 100%);
+  background: -ms-linear-gradient(left, rgba(244,247,251,1) 0%, rgba(244,247,251,1) 2%, rgba(244,247,251,1) 22%, rgba(252,252,252,1) 62%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(to right, rgba(244,247,251,1) 0%, rgba(244,247,251,1) 2%, rgba(244,247,251,1) 22%, rgba(252,252,252,1) 62%, rgba(255,255,255,1) 100%);
 }
 
 
@@ -34,27 +36,42 @@ li{
   margin-top:4px;
 }
 /////redo this to be a mixin*****///
-.items_rejected{
+.items_rejected, .rejected{
   border: 1px solid red;
   margin-top: 10px;
-  color: rgba(248,80,50,1);
+  background: -moz-linear-gradient(left, rgba(251,223,223,1) 0%, rgba(251,223,223,1) 2%, rgba(252,228,228,1) 4%, rgba(255,255,255,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(251,223,223,1)), color-stop(2%, rgba(251,223,223,1)), color-stop(4%, rgba(252,228,228,1)), color-stop(100%, rgba(255,255,255,1)));
+  background: -webkit-linear-gradient(left, rgba(251,223,223,1) 0%, rgba(251,223,223,1) 2%, rgba(252,228,228,1) 4%, rgba(255,255,255,1) 100%);
+  background: -ms-linear-gradient(left, rgba(251,223,223,1) 0%, rgba(251,223,223,1) 2%, rgba(252,228,228,1) 4%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(to right, rgba(251,223,223,1) 0%, rgba(251,223,223,1) 2%, rgba(252,228,228,1) 4%, rgba(255,255,255,1) 100%);
+
 a{
   color: red;
 }
 }
-.items_accepted, .items_completed{
+.items_accepted, .items_completed, .accepted, .completed{
   border: 1px solid green;
   margin-top: 10px;
-color: rgba(0,163,57,1);
+  background: -moz-linear-gradient(left, rgba(237,241,234,1) 0%, rgba(237,241,234,1) 2%, rgba(237,241,234,1) 22%, rgba(252,252,252,1) 62%, rgba(255,255,255,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(237,241,234,1)), color-stop(2%, rgba(237,241,234,1)), color-stop(22%, rgba(237,241,234,1)), color-stop(62%, rgba(252,252,252,1)), color-stop(100%, rgba(255,255,255,1)));
+  background: -webkit-linear-gradient(left, rgba(237,241,234,1) 0%, rgba(237,241,234,1) 2%, rgba(237,241,234,1) 22%, rgba(252,252,252,1) 62%, rgba(255,255,255,1) 100%);
+  background: -o-linear-gradient(left, rgba(237,241,234,1) 0%, rgba(237,241,234,1) 2%, rgba(237,241,234,1) 22%, rgba(252,252,252,1) 62%, rgba(255,255,255,1) 100%);
+  background: -ms-linear-gradient(left, rgba(237,241,234,1) 0%, rgba(237,241,234,1) 2%, rgba(237,241,234,1) 22%, rgba(252,252,252,1) 62%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(to right, rgba(237,241,234,1) 0%, rgba(237,241,234,1) 2%, rgba(237,241,234,1) 22%, rgba(252,252,252,1) 62%, rgba(255,255,255,1) 100%);
 a{
   color: green;
 }
 
 }
 
-.items_running {
+.items_running, .running{
   border: 1px solid blue;
-  color: rgba(0,86,191,1);
+  background: -moz-linear-gradient(left, rgba(235,240,248,1) 0%, rgba(235,240,248,1) 2%, rgba(235,240,248,1) 22%, rgba(252,252,252,1) 62%, rgba(255,255,255,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(235,240,248,1)), color-stop(2%, rgba(235,240,248,1)), color-stop(22%, rgba(235,240,248,1)), color-stop(62%, rgba(252,252,252,1)), color-stop(100%, rgba(255,255,255,1)));
+  background: -webkit-linear-gradient(left, rgba(235,240,248,1) 0%, rgba(235,240,248,1) 2%, rgba(235,240,248,1) 22%, rgba(252,252,252,1) 62%, rgba(255,255,255,1) 100%);
+  background: -o-linear-gradient(left, rgba(235,240,248,1) 0%, rgba(235,240,248,1) 2%, rgba(235,240,248,1) 22%, rgba(252,252,252,1) 62%, rgba(255,255,255,1) 100%);
+  background: -ms-linear-gradient(left, rgba(235,240,248,1) 0%, rgba(235,240,248,1) 2%, rgba(235,240,248,1) 22%, rgba(252,252,252,1) 62%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(to right, rgba(235,240,248,1) 0%, rgba(235,240,248,1) 2%, rgba(235,240,248,1) 22%, rgba(252,252,252,1) 62%, rgba(255,255,255,1) 100%);
   margin-top: 10px;
   a{
     color: rgba(0,86,191,1);
@@ -62,9 +79,15 @@ a{
 }
 
 
-.items_pending{
+.items_pending, .pending{
   border: 1px solid gray;
   color: gray;
+  background: -moz-linear-gradient(left, rgba(235,241,248,1) 0%, rgba(235,241,248,1) 2%, rgba(235,241,248,1) 22%, rgba(252,252,252,1) 62%, rgba(255,255,255,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(235,241,248,1)), color-stop(2%, rgba(235,241,248,1)), color-stop(22%, rgba(235,241,248,1)), color-stop(62%, rgba(252,252,252,1)), color-stop(100%, rgba(255,255,255,1)));
+  background: -webkit-linear-gradient(left, rgba(235,241,248,1) 0%, rgba(235,241,248,1) 2%, rgba(235,241,248,1) 22%, rgba(252,252,252,1) 62%, rgba(255,255,255,1) 100%);
+  background: -o-linear-gradient(left, rgba(235,241,248,1) 0%, rgba(235,241,248,1) 2%, rgba(235,241,248,1) 22%, rgba(252,252,252,1) 62%, rgba(255,255,255,1) 100%);
+  background: -ms-linear-gradient(left, rgba(235,241,248,1) 0%, rgba(235,241,248,1) 2%, rgba(235,241,248,1) 22%, rgba(252,252,252,1) 62%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(to right, rgba(235,241,248,1) 0%, rgba(235,241,248,1) 2%, rgba(235,241,248,1) 22%, rgba(252,252,252,1) 62%, rgba(255,255,255,1) 100%);
   margin-top: 10px;
   a{
     color: $gray;
@@ -73,45 +96,45 @@ a{
 /////////////
 
 
-.allCoffees {
-  margin: 50px;
-  dt{
-    height: auto;
-  }
-
-  dt, dd {
-
-    padding: 10px;
-    margin-left: 10px;
-    margin-top:10px;
-    &:last-of-type {
-
-    }
-    a {
-      display: block;
-      color: black;
-      font-weight: bold;
-    }
-  }
-
-  dd {
-    border-top: none;
-    height: 150px;
-
-    margin-top:-1px;
-    margin-left: 10px;
-    font-size: 12px;
-    &:last-of-type {
-
-      position: relative;
-      top: -1px;
-    }
-  }
-  dt:hover{
-
-    border-bottom:none;
-  }
-}
+// .allCoffees {
+//   margin: 50px;
+//   dt{
+//     height: auto;
+//   }
+//
+//   dt, dd {
+//
+//     padding: 10px;
+//     margin-left: 10px;
+//     margin-top:10px;
+//     &:last-of-type {
+//
+//     }
+//     a {
+//       display: block;
+//       color: black;
+//       font-weight: bold;
+//     }
+//   }
+//
+//   dd {
+//     border-top: none;
+//     height: 150px;
+//
+//     margin-top:-1px;
+//     margin-left: 10px;
+//     font-size: 12px;
+//     &:last-of-type {
+//
+//       position: relative;
+//       top: -1px;
+//     }
+//   }
+//   dt:hover{
+//
+//     border-bottom:none;
+//   }
+// }
 
 
 .Testing{
@@ -143,7 +166,7 @@ dt{
 dd{
   //clear: both;
   height:100px;
-  width: 1110px;
+  width: 1075px;
   padding: 10px;
   margin: 0;
   color: blue;
@@ -172,7 +195,7 @@ dd{
     height: 45px;
 
   }
-  .metrics{
+  .metrics, .metrics1,.metrics2,.metrics3,.metrics4, .noresult{
 
     height: 30px;
     position: absolute;
@@ -182,5 +205,51 @@ dd{
     background-color: $gray;
 
   }
+  .passed{
+   background-color: green;
+  }
+  .failed{
+    background-color: red;
+  }
+  // .progress{
+  //  position: relative;
+  //  height: 30px;
+  //  width: 35px;
+  //  background-color: $gray;
+  // }
+  // .progress::after{
+  //   left: 0;
+  //   content: '';
+  //   top: 0;
+  //   position: absolute;
+  //   width: 20px;
+  //   background-color: blue;
+  // }
 }
+}
+////testing
+
+
+.progress {
+  height:30px;
+  width: 35px;
+
+  position:relative;
+  background:white;
+}
+.progress::after, .progress::before {
+  height:28px;
+  content:' ';
+  position: absolute;
+  top: 0;
+  width: 50%;
+}
+.progress::after {
+  right: 0;
+  background-color: $gray;
+}
+.progress::before {
+  left: 0;
+
+  background-color: blue;
 }

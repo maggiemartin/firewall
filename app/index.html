@@ -32,39 +32,7 @@
      TITLES WILL GO HERE
    </ul>
 
-    <!-- <div class="Testing">
-       <dt><a href="">
-         <ul>
-           <li id="name">
-             <span class="fontawesome-table"></span>
-             Name 1234</li>
-           <li id="owner">samy</li>
-           <li id="timestart">4/18/2012 12:12pm</li>
-           <li id="state">Accepted</li>
-         </ul>
-         <div class="tiles">
-           <div class="tile">
-             <div class="metrics">
-             </div>
-           </div>
-           <div class="tile">
-             <div class="metrics">
-             </div>
-           </div>
-           <div class="tile">
-             <div class="metrics">
-             </div>
-           </div>
-           <div class="tile">
-             <div class="metrics">
-             </div>
-           </div>
-         </div>
-       </a>
-     </dt>
-     <dd>
-       Stuff
-     </dd>---->
+    <div class="metrics1 loco"></div>
 
     <div id="buildList">
     </div>
@@ -72,173 +40,7 @@
 
     <script type="text/template" id="listTemp">
 
-
-    <% if(state === 'rejected') { %>
-
-
-
-  <section class="items_rejected">
-  <dt>
-    <a  href="">
-    <ul>
-      <li id="name">
-      <span class="fontawesome-table"></span>
-          <%= name %></li>
-
-      <li id="owner"><%= owner %> </li>
-      <li id="timestart"><%= $.format.date(createdAt, "M/dd/yyyy h:mm a") %></li>
-      <li id="state"><%= state %></li>
-    </ul>
-    <div class="tiles">
-      <div class="tile">
-        <div class="metrics">
-        </div>
-      </div>
-      <div class="tile">
-        <div class="metrics">
-        </div>
-      </div>
-      <div class="tile">
-        <div class="metrics">
-        </div>
-      </div>
-      <div class="tile">
-        <div class="metrics">
-        </div>
-      </div>
-    </div>
-  </a>
-</dt>
-<dd class="items_rejected">
-  Stuff
-</dd>
-</section>
-
-
-
-    <% } %>
-
-
-    <% if(state === 'accepted') { %>
-    <section class="items_accepted">
-    <dt>
-    <a  href="">
-    <ul>
-    <li id="name">
-    <span class="fontawesome-table"></span>
-    <%= name %></li>
-
-    <li id="owner"><%= owner %> </li>
-    <li id="timestart"><%= $.format.date(createdAt, "M/dd/yyyy h:mm a") %></li>
-    <li id="state"><%= state %></li>
-  </ul>
-  <div class="tiles">
-  <div class="tile">
-  <div class="metrics">
-</div>
-</div>
-<div class="tile">
-<div class="metrics">
-</div>
-</div>
-<div class="tile">
-<div class="metrics">
-</div>
-</div>
-<div class="tile">
-<div class="metrics">
-</div>
-</div>
-</div>
-</a>
-</dt>
-<dd class="items_accepted">
-Stuff
-</dd>
-</section>
-
-    <% } %>
-
-    <% if(state === 'complete') { %>
-    <section class="items_completed">
-    <dt>
-    <a  href="">
-    <ul>
-    <li id="name">
-    <span class="fontawesome-table"></span>
-    <%= name %></li>
-
-    <li id="owner"><%= owner %> </li>
-    <li id="timestart"><%= $.format.date(createdAt, "M/dd/yyyy h:mm a") %></li>
-    <li id="state"><%= state %></li>
-  </ul>
-  <div class="tiles">
-  <div class="tile">
-  <div class="metrics">
-</div>
-</div>
-<div class="tile">
-<div class="metrics">
-</div>
-</div>
-<div class="tile">
-<div class="metrics">
-</div>
-</div>
-<div class="tile">
-<div class="metrics">
-</div>
-</div>
-</div>
-</a>
-</dt>
-<dd class="items_completed">
-Stuff
-</dd>
-</section>
-
-      <% } %>
-
-    <% if(state === 'pending') { %>
-
-    <section class="items_pending">
-      <dt>
-        <a  href="">
-          <ul>
-            <li id="name"><span class="fontawesome-table"></span><%= name %></li>
-
-            <li id="owner"></li>
-            <li id="timestart"></li>
-            <li id="state"><%= state %></li>
-          </ul>
-          <div class="tiles">
-            <div class="tile">
-              <div class="metrics">
-              </div>
-            </div>
-            <div class="tile">
-              <div class="metrics">
-              </div>
-            </div>
-            <div class="tile">
-              <div class="metrics">
-              </div>
-            </div>
-            <div class="tile">
-              <div class="metrics">
-              </div>
-            </div>
-          </div>
-        </a>
-      </dt>
-      <dd class="items_pending">
-        Stuff
-      </dd>
-    </section>
-    <% } %>
-
-    <% if(state === 'running') { %>
-      <section class="items_running">
+      <section class="<%= state %>">
         <dt>
           <a  href="">
             <ul>
@@ -246,36 +48,35 @@ Stuff
                 <span class="fontawesome-table"></span>
                 <%= name %></li>
 
-              <li id="owner"><%= name %></li>
-              <li id="timestart"><%= $.format.date(createdAt, "M/dd/yyyy h:mm a") %></li>
-              <li id="state"><%= state %></li>
-            </ul>
-            <div class="tiles">
-              <div class="tile">
-                <div class="metrics">
-                </div>
-              </div>
-              <div class="tile">
-                <div class="metrics">
-                </div>
-              </div>
-              <div class="tile">
-                <div class="metrics">
-                </div>
-              </div>
-              <div class="tile">
-                <div class="metrics">
-                </div>
-              </div>
-            </div>
-          </a>
-        </dt>
-        <dd class="items_running">
-          Stuff
-        </dd>
-      </section>
+                <li id="owner"><%= owner %> </li>
+                <li id="timestart"><%= $.format.date(createdAt, "M/dd/yyyy h:mm a") %></li>
+                <li id="state"><%= state %></li>
+              </ul>
+              <div class="tiles">
+                <div class="tile">
 
-      <% } %>
+                  <div class="metrics1 <%= metrics %> " >
+                  </div>
+                </div>
+                <div class="tile">
+                  <div class="metrics2 <%= build %>">
+                  </div>
+                </div>
+                <div class="tile">
+                  <div class="metrics3 <%= unit_test %>">
+                  </div>
+                </div>
+                <div class="tile">
+                  <div class="metrics4 <%= functional_test %>">
+                  </div>
+                </div>
+              </div>
+            </a>
+          </dt>
+          <dd class="<%= state %>">
+            Stuff
+          </dd>
+        </section>
 
       </script>
 
