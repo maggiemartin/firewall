@@ -5,54 +5,268 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
     <title>firewall</title>
+
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <link rel="stylesheet" href="styles/vendor.css">
-
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.1.min.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/jquery-ui.min.js"></script>
+    <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="styles/main.css">
 
     <script src="scripts/vendor/modernizr.js"></script>
   </head>
   <body>
 
-    <div class="hero-unit">
-      <h1>Firewall List</h1>
-      <a href="#/add" class="addBtn"><button>Add</button></a>
-    </div>
+
+   <div class="body-container">
+   <ul class="titles">
+     TITLES WILL GO HERE
+   </ul>
+
+    <!-- <div class="Testing">
+       <dt><a href="">
+         <ul>
+           <li id="name">
+             <span class="fontawesome-table"></span>
+             Name 1234</li>
+           <li id="owner">samy</li>
+           <li id="timestart">4/18/2012 12:12pm</li>
+           <li id="state">Accepted</li>
+         </ul>
+         <div class="tiles">
+           <div class="tile">
+             <div class="metrics">
+             </div>
+           </div>
+           <div class="tile">
+             <div class="metrics">
+             </div>
+           </div>
+           <div class="tile">
+             <div class="metrics">
+             </div>
+           </div>
+           <div class="tile">
+             <div class="metrics">
+             </div>
+           </div>
+         </div>
+       </a>
+     </dt>
+     <dd>
+       Stuff
+     </dd>---->
+
     <div id="buildList">
     </div>
+  </div><!--end of body container-->
 
     <script type="text/template" id="listTemp">
 
-    <% if(state === 'rejected') { %>
-      <li class="items_rejected" id="<%= objectId %>">
-        <%= name %> - <%= owner %> | <%= state %> |   <span title="<%= createdAt %>"></span>
 
-      </li>
+    <% if(state === 'rejected') { %>
+
+
+
+  <section class="items_rejected">
+  <dt>
+    <a  href="">
+    <ul>
+      <li id="name">
+      <span class="fontawesome-table"></span>
+          <%= name %></li>
+
+      <li id="owner"><%= owner %> </li>
+      <li id="timestart"><%= $.format.date(createdAt, "M/dd/yyyy h:mm a") %></li>
+      <li id="state"><%= state %></li>
+    </ul>
+    <div class="tiles">
+      <div class="tile">
+        <div class="metrics">
+        </div>
+      </div>
+      <div class="tile">
+        <div class="metrics">
+        </div>
+      </div>
+      <div class="tile">
+        <div class="metrics">
+        </div>
+      </div>
+      <div class="tile">
+        <div class="metrics">
+        </div>
+      </div>
+    </div>
+  </a>
+</dt>
+<dd class="items_rejected">
+  Stuff
+</dd>
+</section>
+
+
+
     <% } %>
 
+
     <% if(state === 'accepted') { %>
-      <li class="items_accepted" id="<%= objectId %>">
-        <%= name %> - <%= owner %> | <%= state %> |   <span title="<%= createdAt %>"></span>
-      </li>
+    <section class="items_accepted">
+    <dt>
+    <a  href="">
+    <ul>
+    <li id="name">
+    <span class="fontawesome-table"></span>
+    <%= name %></li>
+
+    <li id="owner"><%= owner %> </li>
+    <li id="timestart"><%= $.format.date(createdAt, "M/dd/yyyy h:mm a") %></li>
+    <li id="state"><%= state %></li>
+  </ul>
+  <div class="tiles">
+  <div class="tile">
+  <div class="metrics">
+</div>
+</div>
+<div class="tile">
+<div class="metrics">
+</div>
+</div>
+<div class="tile">
+<div class="metrics">
+</div>
+</div>
+<div class="tile">
+<div class="metrics">
+</div>
+</div>
+</div>
+</a>
+</dt>
+<dd class="items_accepted">
+Stuff
+</dd>
+</section>
+
     <% } %>
 
     <% if(state === 'complete') { %>
-      <li class="items_accepted" id="<%= objectId %>">
-        <%= name %> - <%= owner %> | <%= state %> |   <span title="<%= createdAt %>"></span>
-      </li>
+    <section class="items_completed">
+    <dt>
+    <a  href="">
+    <ul>
+    <li id="name">
+    <span class="fontawesome-table"></span>
+    <%= name %></li>
+
+    <li id="owner"><%= owner %> </li>
+    <li id="timestart"><%= $.format.date(createdAt, "M/dd/yyyy h:mm a") %></li>
+    <li id="state"><%= state %></li>
+  </ul>
+  <div class="tiles">
+  <div class="tile">
+  <div class="metrics">
+</div>
+</div>
+<div class="tile">
+<div class="metrics">
+</div>
+</div>
+<div class="tile">
+<div class="metrics">
+</div>
+</div>
+<div class="tile">
+<div class="metrics">
+</div>
+</div>
+</div>
+</a>
+</dt>
+<dd class="items_completed">
+Stuff
+</dd>
+</section>
+
       <% } %>
 
     <% if(state === 'pending') { %>
-      <li class="items_pending" id="<%= objectId %>">
-        <%= name %> - <%= owner %> | <%= state %> | <%= createdAt %>
-      </li>
+
+    <section class="items_pending">
+      <dt>
+        <a  href="">
+          <ul>
+            <li id="name"><span class="fontawesome-table"></span><%= name %></li>
+
+            <li id="owner"></li>
+            <li id="timestart"></li>
+            <li id="state"><%= state %></li>
+          </ul>
+          <div class="tiles">
+            <div class="tile">
+              <div class="metrics">
+              </div>
+            </div>
+            <div class="tile">
+              <div class="metrics">
+              </div>
+            </div>
+            <div class="tile">
+              <div class="metrics">
+              </div>
+            </div>
+            <div class="tile">
+              <div class="metrics">
+              </div>
+            </div>
+          </div>
+        </a>
+      </dt>
+      <dd class="items_pending">
+        Stuff
+      </dd>
+    </section>
     <% } %>
 
     <% if(state === 'running') { %>
-      <li class="items_running" id="<%= objectId %>">
-        <%= name %> - <%= owner %> | <%= state %>
-      </li>
+      <section class="items_running">
+        <dt>
+          <a  href="">
+            <ul>
+              <li id="name">
+                <span class="fontawesome-table"></span>
+                <%= name %></li>
+
+              <li id="owner"><%= name %></li>
+              <li id="timestart"><%= $.format.date(createdAt, "M/dd/yyyy h:mm a") %></li>
+              <li id="state"><%= state %></li>
+            </ul>
+            <div class="tiles">
+              <div class="tile">
+                <div class="metrics">
+                </div>
+              </div>
+              <div class="tile">
+                <div class="metrics">
+                </div>
+              </div>
+              <div class="tile">
+                <div class="metrics">
+                </div>
+              </div>
+              <div class="tile">
+                <div class="metrics">
+                </div>
+              </div>
+            </div>
+          </a>
+        </dt>
+        <dd class="items_running">
+          Stuff
+        </dd>
+      </section>
+
       <% } %>
 
       </script>
@@ -69,6 +283,8 @@
 
     <script src="scripts/vendor.js"></script>
     <script src="//www.parsecdn.com/js/parse-1.3.1.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+
     <script type="text/javascript">
     window.App = {};
     App.Models = {};
