@@ -3,7 +3,7 @@
   App.Views.ListBuilds = Parse.View.extend({
 
     //tagName: 'ul',
-    className: 'allCoffees',
+    className: 'Testing',
 
     events: {},
 
@@ -23,13 +23,19 @@
 
       (function($) {
 
-        var allPanels = $('.allCoffees > dd').hide();
+        var allPanels = $('.Testing > section > dd').hide();
 
-        $('.allCoffees > dt > a').click(function() {
+
+
+        $('.Testing > section > dt > a').click(function() {
+
           allPanels.slideUp();
+
           $(this).parent().next().slideDown();
+
           return false;
         });
+
 
       })(jQuery);
 

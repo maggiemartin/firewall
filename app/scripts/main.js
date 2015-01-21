@@ -13,10 +13,22 @@ Parse.initialize("STaZjwg248AVhhW7hsrWTCEE9btscUOvFbpkAGS4", "PdlOWVl6Sx3O8eHZc1
   });
 
 
+  (function($) {
 
+    var allPanels = $('.Testing > section > dd').hide();
+
+
+
+    $('.Testing > section > dt > a').click(function() {
+
+      allPanels.slideUp();
+
+      $(this).parent().next().slideDown();
+
+      return false;
+    });
+
+
+  })(jQuery);
 
 }());
-$('.items_completed').click(function(){
-
-console.log('working');
-});
