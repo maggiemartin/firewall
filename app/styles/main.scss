@@ -31,7 +31,7 @@ li{
   border: 1px solid red;
 color: rgba(248,80,50,1);
 }
-.items_accepted{
+.items_accepted, .items_completed{
   border: 1px solid green;
 color: rgba(0,163,57,1);
 
@@ -46,4 +46,34 @@ color: rgba(0,163,57,1);
   border: 1px solid gray;
   color: gray;
 
+}
+///accordion
+.test{
+
+}
+
+.allCoffees {
+  margin: 50px;
+  dt, dd {
+    padding: 10px;
+    margin: 10px;
+    &:last-of-type {
+
+    }
+    a {
+      display: block;
+      color: black;
+      font-weight: bold;
+    }
+  }
+  dd {
+    height: 150px;
+    margin-left: 0;
+    font-size: 12px;
+    &:last-of-type {
+
+      position: relative;
+      top: -1px;
+    }
+  }
 }

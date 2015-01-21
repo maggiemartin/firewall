@@ -2,7 +2,7 @@
 
   App.Views.ListBuilds = Parse.View.extend({
 
-    tagName: 'ul',
+    //tagName: 'ul',
     className: 'allCoffees',
 
     events: {},
@@ -21,6 +21,17 @@
       // Get our Element On Our Page
       $('#buildList').html(this.$el);
 
+      (function($) {
+
+        var allPanels = $('.allCoffees > dd').hide();
+
+        $('.allCoffees > dt > a').click(function() {
+          allPanels.slideUp();
+          $(this).parent().next().slideDown();
+          return false;
+        });
+
+      })(jQuery);
 
 
     },
@@ -42,10 +53,14 @@
       //   })
       // } else {
         // Sort from our default comparator in our collection constructor
-      //  this.collection.sort();
+        this.collection.sort();
+
         this.collection.each(function (c) {
           self.$el.append(self.template(c.toJSON()));
         });
+
+        //accordion code goes here
+
       }
 
 
