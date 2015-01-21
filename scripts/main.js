@@ -120,6 +120,12 @@ var DateFormat={};!function(a){var b=["Sunday","Monday","Tuesday","Wednesday","T
       })(jQuery);
 
 
+          //console.log(c.attributes.build);
+
+
+
+
+
     },
 
     render: function () {
@@ -143,10 +149,17 @@ var DateFormat={};!function(a){var b=["Sunday","Monday","Tuesday","Wednesday","T
 
         this.collection.each(function (c) {
           self.$el.append(self.template(c.toJSON()));
+
         });
 
-        //accordion code goes here
 
+        //  $(".").css({'width' : monster.health +"%"});
+
+        //  if (build.health < 30) {$("#health-bar2").css({'background-color' : "red"})}
+        //else if  (monster.health > 29 & monster.health < 75)    {$("#health-bar2").css({'background-color' : "rgb(237,255,88)"})}
+        //  else if (monster.health > 74)
+        //  {$("#health-bar2").css({'background-color' : "hsla(85, 100%, 50%, 1)"})}
+        //  }
       }
 
 
