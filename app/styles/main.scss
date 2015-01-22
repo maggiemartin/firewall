@@ -311,7 +311,26 @@ dd{
     text-align: center;
     padding:27px;
   }
+  .bar-data{
+    color: green;
+    font-size: 11px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    position: absolute;
+    margin-top: 105px;
+    width: 150px;
+    margin-left: 20px;
+
+  }
+  .bar-data span{
+  width: 150px;
+  text-align: center;
+    font-size: 9px;
+  }
 }
+
+
 .result-box{
 
   width: 190px;
@@ -372,6 +391,7 @@ progress[value] {
   margin-top: 105px;
   margin-left: 20px;
   width: 150px;
+
   height: 26px;
 }
 
