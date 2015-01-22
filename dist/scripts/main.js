@@ -113,7 +113,7 @@ var DateFormat={};!function(a){var b=["Sunday","Monday","Tuesday","Wednesday","T
         $('.Testing > section > dt > a').click(function() {
 
           allPanels.slideUp();
-          allTiles.fadeIn(300);
+          allTiles.fadeIn(500);
 
           $(this).parent().next().slideDown();
           $(this).find('.tiles').fadeOut(300);
@@ -126,11 +126,68 @@ var DateFormat={};!function(a){var b=["Sunday","Monday","Tuesday","Wednesday","T
 
       })(jQuery);
 
+      ///begin pie chart svg here///
+      (function ($, document) {
+        $.fn.easyaspie = function () {
 
+          var	size	= parseInt(this.data('size')),
+          radius	= size / 2,
+          value	= parseInt(this.data('value'));
 
+          // pie all the things!
+          if (this.length > 1){
+            this.each( function() {
+              $(this).easyaspie();
+            });
+            return this;
+          }
 
-       var localTime;
-       var divUtc;
+          // is you trying to break things?
+          if (isNaN(value)) {
+            return this;
+          }
+
+          // set the size of this
+          this.css({
+            height: size,
+            width: size
+          }).addClass('pie-sliced');
+
+          // make value behave
+          value = Math.min(Math.max(value, 0), 100);
+          // make some svg
+          this.pie = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+          if (value >= 100) {
+            this.pie.slice = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            this.pie.slice.setAttribute('r', radius);
+            this.pie.slice.setAttribute('cx', radius);
+            this.pie.slice.setAttribute('cy', radius);
+
+          } else {
+            this.pie.slice = document.createElementNS("http://www.w3.org/2000/svg", "path");
+
+            //calculate x,y coordinates of the point on the circle to draw the arc to.
+            var x = Math.cos((2 * Math.PI)/(100/value));
+            var y = Math.sin((2 * Math.PI)/(100/value));
+
+            //should the arc go the long way round?
+            var longArc = (value <= 50) ? 0 : 1;
+
+            var d = "M" + radius + "," + radius + " L" + radius + "," + 0 + ", A" + radius + "," + radius + " 0 " + longArc + ",1 " + (radius + y*radius) + "," + (radius - x*radius) + " z";
+            this.pie.slice.setAttribute('d', d);
+          }
+
+          //add the slice to the pie.
+          $(this.pie.slice).appendTo(this.pie);
+
+          // add the pie to this
+          $(this.pie).appendTo(this);
+
+          return this;
+        };
+
+        $('.pie').easyaspie();
+      })(jQuery, document);
 
 
     },
@@ -148,7 +205,7 @@ var DateFormat={};!function(a){var b=["Sunday","Monday","Tuesday","Wednesday","T
       localTime = moment(localTime).format('hh:mm a - MM/DD/YYYY');
       App.localTime = localTime
       console.log(App.localTime);
-      
+
       // Sorting On The Fly
       // if (this.options.sort != undefined) {
       //   // Setting up a localized collection to sort by our sort param
@@ -240,8 +297,6 @@ Parse.initialize("STaZjwg248AVhhW7hsrWTCEE9btscUOvFbpkAGS4", "PdlOWVl6Sx3O8eHZc1
 
 
   })(jQuery);
-  // <!--moment().format('MMMM Do YYYY, h:mm:ss a'); -->
-  // <!--  <%= $.format.date("MMMM Do YYYY, h:mm a") %>-->
 
 
 

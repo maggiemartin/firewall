@@ -123,48 +123,7 @@ p{
     color: $gray;
   }
 }
-/////////////
 
-
-// .allCoffees {
-//   margin: 50px;
-//   dt{
-//     height: auto;
-//   }
-//
-//   dt, dd {
-//
-//     padding: 10px;
-//     margin-left: 10px;
-//     margin-top:10px;
-//     &:last-of-type {
-//
-//     }
-//     a {
-//       display: block;
-//       color: black;
-//       font-weight: bold;
-//     }
-//   }
-//
-//   dd {
-//     border-top: none;
-//     height: 150px;
-//
-//     margin-top:-1px;
-//     margin-left: 10px;
-//     font-size: 12px;
-//     &:last-of-type {
-//
-//       position: relative;
-//       top: -1px;
-//     }
-//   }
-//   dt:hover{
-//
-//     border-bottom:none;
-//   }
-// }
 
 .titleList{
 
@@ -274,20 +233,7 @@ dd{
     background: -ms-linear-gradient(left, rgba(231,56,39,1) 0%, rgba(240,47,23,1) 30%, rgba(246,41,12,1) 58%, rgba(241,111,92,1) 82%, rgba(242,168,155,1) 93%, rgba(242,168,155,1) 100%);
     background: linear-gradient(to right, rgba(231,56,39,1) 0%, rgba(240,47,23,1) 30%, rgba(246,41,12,1) 58%, rgba(241,111,92,1) 82%, rgba(242,168,155,1) 93%, rgba(242,168,155,1) 100%);
   }
-  // .progress{
-  //  position: relative;
-  //  height: 30px;
-  //  width: 35px;
-  //  background-color: $gray;
-  // }
-  // .progress::after{
-  //   left: 0;
-  //   content: '';
-  //   top: 0;
-  //   position: absolute;
-  //   width: 20px;
-  //   background-color: blue;
-  // }
+
 }
 }
 ////testing
@@ -391,6 +337,50 @@ dd{
   font-size: 11px;
 
 }
-.timey{
-  background-color: yellow;
+
+
+//pie chart
+.pie {
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  margin-top: 35px;
+  margin-left: 20px;
+  background: #ed7d31;
+  border-radius: 100%;
+  fill: #70ad47;
+
+}
+#bigpercent{
+
+  margin-top: 50px;
+  margin-left: 100px;
+  font-size: 30px;
+  position: absolute;
+  color: #a5c946;
+  span{
+    font-size: 10px;
+    color: black;
+  }
+}
+
+progress[value] {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute;
+  margin-top: 105px;
+  margin-left: 20px;
+  width: 150px;
+  height: 26px;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #f7cbac;
+  border-radius: 2px;
+  //box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+progress[value]::-webkit-progress-value {
+  background-color: #c5e0b3;
+  border-radius: 2px;
 }

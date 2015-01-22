@@ -30,8 +30,6 @@ Parse.initialize("STaZjwg248AVhhW7hsrWTCEE9btscUOvFbpkAGS4", "PdlOWVl6Sx3O8eHZc1
 
 
   })(jQuery);
-  // <!--moment().format('MMMM Do YYYY, h:mm:ss a'); -->
-  // <!--  <%= $.format.date("MMMM Do YYYY, h:mm a") %>-->
 
 
 

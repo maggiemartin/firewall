@@ -134,8 +134,17 @@
 
             <div class="unit-test-box" id="<%= unit_test %>">
               <p>Unit Test</p>
-              <div id="pieChart" class="chart"></div>
+              <div class="pie" data-size="60" data-value="<%= unit_test_tests_passed %>">
+              </div>
+              <div id="bigpercent">
+                <%= unit_test_tests_passed %>%<br>
+                <span>tests passed</span>
+              </div>
 
+                <progress max="100" value="<%= unit_test_tests_passed %>">
+                </progress>
+                25%<br>
+                code covered
 
             </div>
 
