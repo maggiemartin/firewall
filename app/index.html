@@ -28,11 +28,52 @@
 
 
    <div class="body-container">
-   <ul class="titles">
-     TITLES WILL GO HERE
-   </ul>
+   <div class="titleList">
+  <section>
+     <dt>
+       <!--<a  href="">-->
+         <ul>
+           <li id="name">
+            Changelist/Build
+             </li>
 
-    <div class="metrics1 loco"></div>
+             <li id="owner"> Owner </li>
+             <li id="timestart"> Time Started</li>
+             <li id="state"> State</li>
+           </ul>
+           <div class="tiles">
+             <div class="tile">
+
+               <div class="title">
+                 Metrics
+               </div>
+             </div>
+             <div class="tile">
+               <div class="title">
+                 Build
+               </div>
+             </div>
+             <div class="tile">
+               <div class="title">
+                 Unit Test
+               </div>
+             </div>
+             <div class="tile">
+               <div class="title">
+                 Functional Test
+               </div>
+             </div>
+           </div>
+         </a>
+       </dt>
+    </section>
+
+
+
+
+
+   </div>
+
 
     <div id="buildList">
     </div>
@@ -44,12 +85,21 @@
         <dt>
           <a  href="">
             <ul>
+
               <li id="name">
+                <% if(type === 'changelist') { %>
                 <span class="fontawesome-table"></span>
+                <% } %>
+
+                <% if(type === 'build') { %>
+                <span class="fontawesome-desktop"></span>
+                <% } %>
+
                 <%= name %></li>
 
                 <li id="owner"><%= owner %> </li>
                 <li id="timestart"><%= $.format.date(createdAt, "M/dd/yyyy h:mm a") %></li>
+
                 <li id="state"><%= state %></li>
               </ul>
               <div class="tiles">
@@ -74,7 +124,35 @@
             </a>
           </dt>
           <dd class="<%= state %>">
-            Stuff
+            <div class="metrics-box" id="<%= metrics %>">
+              <p>Metrics</p>
+            </div>
+
+            <div class="build-box" id="<%= build %>">
+              <p>Build</p>
+              <span class= "fontawesome-desktop">
+              </span>
+              <span class="fontawesome-desktop">
+              </span>
+              <li>Debug</li><li>Release</li>
+              <div id="divLocal">
+               <%= App.localTime %>
+              </div>
+            </div>
+
+            <div class="unit-test-box" id="<%= unit_test %>">
+              <p>Unit Test</p>
+              <div id="pieChart" class="chart"></div>
+
+
+            </div>
+
+            <div class="functional-test-box" id="<%= functional_test %>">
+              <p>Functional Test</p>
+            </div>
+
+            <div class="result-box">
+            </div>
           </dd>
         </section>
 

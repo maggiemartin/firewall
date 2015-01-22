@@ -35,16 +35,19 @@
           $(this).parent().next().slideDown();
           $(this).find('.tiles').fadeOut(300);
           return false;
+
+
+
         });
 
 
       })(jQuery);
 
 
-          //console.log(c.attributes.build);
 
 
-
+       var localTime;
+       var divUtc;
 
 
     },
@@ -55,6 +58,14 @@
       // Empty out
       this.$el.empty();
 
+      var divUtc = moment.utc().format('hh:mm a - MM/DD/YYYY');
+      var localTime  = moment.utc(divUtc).toDate();
+
+
+      localTime = moment(localTime).format('hh:mm a - MM/DD/YYYY');
+      App.localTime = localTime
+      console.log(App.localTime);
+      
       // Sorting On The Fly
       // if (this.options.sort != undefined) {
       //   // Setting up a localized collection to sort by our sort param
@@ -71,16 +82,11 @@
         this.collection.each(function (c) {
           self.$el.append(self.template(c.toJSON()));
 
+
         });
 
 
-        //  $(".").css({'width' : monster.health +"%"});
 
-        //  if (build.health < 30) {$("#health-bar2").css({'background-color' : "red"})}
-        //else if  (monster.health > 29 & monster.health < 75)    {$("#health-bar2").css({'background-color' : "rgb(237,255,88)"})}
-        //  else if (monster.health > 74)
-        //  {$("#health-bar2").css({'background-color' : "hsla(85, 100%, 50%, 1)"})}
-        //  }
       }
 
 
