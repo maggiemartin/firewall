@@ -82,6 +82,7 @@
         $('.pie').easyaspie();
       })(jQuery, document);
 
+///accordion effect code goes here
 
       (function($) {
 
@@ -113,7 +114,6 @@
 
       localTime = moment(localTime).format('hh:mm a - MM/DD/YYYY');
       App.localTime = localTime
-      console.log(App.localTime);
 
       // Sorting On The Fly
       // if (this.options.sort != undefined) {

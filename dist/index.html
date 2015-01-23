@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>List of Builds and Changelists</title>
+    <title>Maggie Martin | List of Builds and Changelists</title>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -63,10 +63,10 @@
 
         <li id="name">
         <% if(type === 'changelist') { %>
-        <span class="fontawesome-table"></span>
+         <span class="fontawesome-table"></span>
         <% } %>
         <% if(type === 'build') { %>
-        <span class="fontawesome-desktop"></span>
+         <span class="fontawesome-desktop"></span>
         <% } %>
 
         <%= name %></li>
@@ -75,24 +75,25 @@
         <li id="state"><%= state %></li>
 
       </ul>
-        <div class="tiles">
-            <div class="tile">
-              <div class="metrics <%= metrics %> " >
-              </div>
-            </div>
-            <div class="tile">
-              <div class="metrics <%= build %>">
-              </div>
-            </div>
-            <div class="tile">
-              <div class="metrics <%= unit_test %>">
-              </div>
-            </div>
-            <div class="tile">
-              <div class="metrics <%= functional_test %>">
-              </div>
-            </div>
+      <div class="tiles">
+        <div class="tile">
+           <div class="metrics <%= metrics %> " >
+           </div>
+        </div>
+        <div class="tile">
+           <div class="metrics <%= build %>">
+           </div>
+        </div>
+        <div class="tile">
+          <div class="metrics <%= unit_test %>">
+          </div>
+        </div>
+        <div class="tile">
+          <div class="metrics <%= functional_test %>">
+          </div>
+        </div>
         </div><!---end of tiles---->
+
       </a>
     </dt>
 
@@ -235,11 +236,8 @@
                   <span id="button">Initialize</span>
                   <% } %>
             </div>
-
           </dd>
-
         </section>
-
       </script>
 
 
