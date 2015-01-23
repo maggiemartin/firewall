@@ -4,7 +4,6 @@
 @import url(http://weloveiconfonts.com/api/?family=fontawesome);
 @import url(http://weloveiconfonts.com/api/?family=entypo);
 
-
 $gray: hsl(0,0,84);
 
 /* fontawesome */
@@ -23,7 +22,7 @@ $gray: hsl(0,0,84);
   color: green;
 }
 
-#Deb
+
 .entypo-down-bold, .result_Incomplete, .result_Metrics-Reduction{
   color: red;
 }
@@ -126,8 +125,6 @@ p{
     color: gray;
   }
 }
-
-
 
 .titleList{
   font-size: 13px;
@@ -261,8 +258,6 @@ dd{
   background: linear-gradient(to right, rgba(31,25,204,1) 0%, rgba(110,106,204,1) 46%, rgba(157,155,224,1) 97%, rgba(255,255,255,1) 100%);
 
 }
-
-
 
 //// charts
 dd{
@@ -435,7 +430,6 @@ dd{
 
 }
 
-
 //pie chart
 .pie {
   display: inline-block;
@@ -449,7 +443,6 @@ dd{
 
 }
 #bigpercent{
-
   margin-top: 50px;
   margin-left: 100px;
   font-size: 30px;
@@ -483,8 +476,6 @@ dd{
     width: 90%;
     margin-left: 5%;
     float: left;
-
-
   }
   button{
   margin-left: 10px;
@@ -519,8 +510,6 @@ dd{
     background: linear-gradient(to right, rgba(31,25,204,1) 0%, rgba(110,106,204,1) 46%, rgba(157,155,224,1) 97%, rgba(255,255,255,1) 100%);
     border-radius: 2px;
   }
-
-
 }
 
 .metrics-arrow-grid{
@@ -531,14 +520,11 @@ dd{
 
 #metric-test, #metric-maintainability,
  #metric-security, #metric-workmanship{
-
   float: left;
   height: 50px;
   width: 50%;
-
   p{
   width:  100px;
-
     font-weight: 300;
     color: black;
     margin-left: -2px;
@@ -558,5 +544,8 @@ dd{
     color: black;
   }
 }
+}
 
+.entypo-down-bold{
+  color: red;
 }
