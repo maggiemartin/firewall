@@ -90,14 +90,16 @@
 
         var allPanels = $('.Testing > section > dd').hide();
 
-        var allTiles = $('.Testing > section > dt > a > .tiles').show();
+        var allTiles = $('.Testing > section > dt > a > .tiles').fadeIn();
 
         $('.Testing > section > dt > a').click(function() {
+
 
           allPanels.slideUp();
           allTiles.fadeIn();
 
           $(this).parent().next().slideDown();
+
           $(this).find('.tiles').hide();
           return false;
 

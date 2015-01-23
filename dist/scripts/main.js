@@ -173,14 +173,16 @@ var DateFormat={};!function(a){var b=["Sunday","Monday","Tuesday","Wednesday","T
 
         var allPanels = $('.Testing > section > dd').hide();
 
-        var allTiles = $('.Testing > section > dt > a > .tiles').show();
+        var allTiles = $('.Testing > section > dt > a > .tiles').fadeIn();
 
         $('.Testing > section > dt > a').click(function() {
+
 
           allPanels.slideUp();
           allTiles.fadeIn();
 
           $(this).parent().next().slideDown();
+
           $(this).find('.tiles').hide();
           return false;
 
@@ -279,26 +281,5 @@ Parse.initialize("STaZjwg248AVhhW7hsrWTCEE9btscUOvFbpkAGS4", "PdlOWVl6Sx3O8eHZc1
     App.router = new App.Routers.AppRouter();
 
   });
-
-
-  (function($) {
-
-    var allPanels = $('.Testing > section > dd').hide();
-
-
-
-    $('.Testing > section > dt > a').click(function() {
-
-      allPanels.slideUp();
-
-      $(this).parent().next().slideDown();
-
-      return false;
-    });
-
-
-  })(jQuery);
-
-
 
 }());

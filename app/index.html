@@ -117,7 +117,7 @@
       </a>
     </dt>
 
-          <% if(state === 'pending') { %>
+       <% if(state === 'pending') { %>
 
           <dd>
             <section id="pretest-info">
@@ -132,13 +132,40 @@
           <% if(state === 'running') { %>
           <dd class="running-progress">
 
-            <progress max="100" value="33">
+            <progress max="100" value="33"></progress><br>
+            <p> <%= App.localTime %> | This <%= type %> is currently <%= state %>.
+              <button>Pause</button><button>Cancel</button>
+
+            </p>
+
           </dd>
             <% } %>
 
           <dd class="<%= state %>">
             <div class="metrics-box" id="<%= metrics %>">
               <p>Metrics</p>
+                <div class="metrics-arrow-grid">
+                  <div id="metric-test">
+                    <h3>34</h3>
+                    <span class="entypo-up-bold"></span>
+                    <p>Test</p>
+                  </div>
+                  <div id="metric-maintainability">
+                    <h3>67</h3>
+                    <span class="entypo-up-bold"></span>
+                    <p>Maintainability</p>
+                  </div>
+                  <div id="metric-security">
+                    <h3>54</h3>
+                    <span class="entypo-left-bold"></span>
+                    <p>Security</p>
+                  </div>
+                  <div id="metric-workmanship">
+                    <h3>38</h3>
+                    <span class="entypo-right-bold"></span>
+                    <p>Workmanship</p>
+                  </div>
+                </div>
             </div>
 
             <div class="build-box" id="<%= build %>">

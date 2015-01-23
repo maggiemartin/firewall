@@ -2,6 +2,8 @@
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 @import url(http://weloveiconfonts.com/api/?family=fontawesome);
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
 
 $gray: hsl(0,0,84);
 
@@ -9,6 +11,16 @@ $gray: hsl(0,0,84);
 [class*="fontawesome-"]:before {
   font-family: 'FontAwesome', sans-serif;
 }
+
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+  font-size: 50px;
+  color: green;
+  padding: 10px;
+  margin-left: 20px;
+}
+
 
 [id*= "changelist-"]:before{
   font-family: 'FontAwesome', sans-serif;
@@ -169,7 +181,7 @@ dd{
   margin: 0;
   color: blue;
   text-align:left;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   border: none;
   border-top:none;
 }
@@ -482,14 +494,32 @@ dd{
 }
 
 .running-progress{
+  margin-bottom: 0;
+  overflow: auto;
+  height: 100px;
+  p{
+    font-size: 12px;
+    width: 90%;
+    margin-left: 5%;
+    float: left;
 
+
+  }
+  button{
+  margin-left: 10px;
+    float: right;
+    font-size: 12px;
+    padding: 5px;
+
+  }
   progress[value] {
     /* Reset the default appearance */
     -webkit-appearance: none;
     appearance: none;
     border: 1px solid gray;
-    margin-left: 20px;
-    width: 700px;
+
+    width:  90%;
+    margin-left: 5%;
     margin-top: 30px;
     height: 40px;
   }
@@ -510,4 +540,39 @@ dd{
   }
 
 
+}
+
+.metrics-arrow-grid{
+ height: 110px;
+ list-style-type: none;
+
+
+ margin-top: 25px;
+ width: 100%;
+
+#metric-test, #metric-maintainability, #metric-security, #metric-workmanship{
+
+  float: left;
+  height: 50px;
+  width: 50%;
+
+  p{
+  width:  100px;
+
+    font-weight: 300;
+    color: black;
+    margin-left: -2px;
+    margin-top: 45px;
+    text-align: center;
+    font-size: 10px;
+  }
+  h3{
+    position: absolute;
+    color: white;
+    font-size: 11px;
+    margin-left: 43px;
+    padding-top: 5px;
+    font-weight: 300;
+  }
+}
 }
