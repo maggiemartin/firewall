@@ -1,3 +1,7 @@
-## Yo, I'm a Readme
+## Builds and ChangeLists
 
-You should probably update me so people looking at your code have an idea what it is being used for :)
+To use:
+
+Clone repo: https://github.com/maggiemartin/firewall/
+Run npm install
+Run bower install
