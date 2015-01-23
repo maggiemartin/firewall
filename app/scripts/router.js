@@ -8,17 +8,12 @@
     },
 
     routes: {
-      '' : 'home',
-      'add' : 'add'
-
+      '' : 'home'
 
     },
 
     home: function () {
       new App.Views.ListBuilds({ collection: App.builds });
-    },
-    add: function(){
-      new App.Views.AddBuild();
     }
 
 

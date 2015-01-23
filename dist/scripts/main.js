@@ -44,48 +44,9 @@ var DateFormat={};!function(a){var b=["Sunday","Monday","Tuesday","Wednesday","T
 
 (function () {
 
-  App.Views.AddBuild = Parse.View.extend({
-
-    events: {
-      'submit #addCoffee' : 'addBuild'
-    },
-
-    initialize: function () {
-      this.render();
-
-      $('#buildList').html(this.$el);
-    },
-
-    render: function () {
-      this.$el.html($('#addTemp').html());
-    },
-
-    addBuild: function (e) {
-      e.preventDefault();
-
-      var c = new App.Models.Build({
-        name: $('#coffee_name').val()
-
-      });
-
-      c.save(null, {
-        success: function () {
-          App.builds.add(c);
-          App.router.navigate('', { trigger: true });
-        }
-      });
-
-    }
-
-  });
-
-}());
-
-(function () {
-
   App.Views.ListBuilds = Parse.View.extend({
 
-    //tagName: 'ul',
+
     className: 'Testing',
 
     events: {},
@@ -108,7 +69,6 @@ var DateFormat={};!function(a){var b=["Sunday","Monday","Tuesday","Wednesday","T
       ///begin pie chart svg here///
       (function ($, document) {
         $.fn.easyaspie = function () {
-
           var	size	= parseInt(this.data('size')),
           radius	= size / 2,
           value	= parseInt(this.data('value'));
@@ -120,8 +80,7 @@ var DateFormat={};!function(a){var b=["Sunday","Monday","Tuesday","Wednesday","T
             });
             return this;
           }
-
-          // is you trying to break things?
+          //only numbers here
           if (isNaN(value)) {
             return this;
           }
@@ -155,7 +114,6 @@ var DateFormat={};!function(a){var b=["Sunday","Monday","Tuesday","Wednesday","T
             var d = "M" + radius + "," + radius + " L" + radius + "," + 0 + ", A" + radius + "," + radius + " 0 " + longArc + ",1 " + (radius + y*radius) + "," + (radius - x*radius) + " z";
             this.pie.slice.setAttribute('d', d);
           }
-
           //add the slice to the pie.
           $(this.pie.slice).appendTo(this.pie);
 
@@ -177,22 +135,14 @@ var DateFormat={};!function(a){var b=["Sunday","Monday","Tuesday","Wednesday","T
 
         $('.Testing > section > dt > a').click(function() {
 
-
           allPanels.slideUp();
           allTiles.fadeIn();
-
           $(this).parent().next().slideDown();
-
           $(this).find('.tiles').hide();
           return false;
 
-
-
         });
-
-
       })(jQuery);
-
 
     },
 
@@ -219,7 +169,7 @@ var DateFormat={};!function(a){var b=["Sunday","Monday","Tuesday","Wednesday","T
       //     self.$el.append(self.template(c.toJSON()));
       //   })
       // } else {
-        // Sort from our default comparator in our collection constructor
+      // Sort from our default comparator in our collection constructor
         this.collection.sort();
 
         this.collection.each(function (c) {
@@ -231,10 +181,6 @@ var DateFormat={};!function(a){var b=["Sunday","Monday","Tuesday","Wednesday","T
 
 
       }
-
-
-
-
   });
 
 }());
@@ -249,17 +195,12 @@ var DateFormat={};!function(a){var b=["Sunday","Monday","Tuesday","Wednesday","T
     },
 
     routes: {
-      '' : 'home',
-      'add' : 'add'
-
+      '' : 'home'
 
     },
 
     home: function () {
       new App.Views.ListBuilds({ collection: App.builds });
-    },
-    add: function(){
-      new App.Views.AddBuild();
     }
 
 

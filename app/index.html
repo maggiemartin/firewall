@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>firewall</title>
+    <title>List of Builds and Changelists</title>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -26,53 +26,40 @@
   </head>
   <body>
 
+  <div class="body-container">
 
-   <div class="body-container">
-   <div class="titleList">
-
+  <div class="titleList">
   <section>
      <dt>
-         <ul>
-           <li id="name">
-            Changelist/Build
-             </li>
+      <ul>
+        <li id="name">Changelist/Build</li>
+        <li id="owner"> Owner </li>
+        <li id="timestart"> Time Started</li>
+        <li id="state"> State</li>
+      </ul>
 
-             <li id="owner"> Owner </li>
-             <li id="timestart"> Time Started</li>
-             <li id="state"> State</li>
-           </ul>
-           <div class="tiles">
-             <div class="tile">
+      <div class="tiles">
+         <div class="tile">
+            <div class="title">Metrics</div>
+         </div>
+         <div class="tile">
+            <div class="title"> Build</div>
+         </div>
+         <div class="tile">
+            <div class="title">Unit Test</div>
+         </div>
+         <div class="tile">
+            <div class="title">Functional Test</div>
+         </div>
+      </div><!---end of tiles columns-->
 
-               <div class="title">
-                 Metrics
-               </div>
-             </div>
-             <div class="tile">
-               <div class="title">
-                 Build
-               </div>
-             </div>
-             <div class="tile">
-               <div class="title">
-                 Unit Test
-               </div>
-             </div>
-             <div class="tile">
-               <div class="title">
-                 Functional Test
-               </div>
-             </div>
-           </div>
-         </a>
-       </dt>
-    </section>
-
-   </div>
+    </dt>
+  </section>
+  </div><!---end of title labels-->
 
 
-    <div id="buildList">
-    </div>
+  <div id="buildList"><!---list goes here--></div>
+
   </div><!--end of body container-->
 
   <script type="text/template" id="listTemp">
@@ -98,19 +85,19 @@
       </ul>
         <div class="tiles">
             <div class="tile">
-              <div class="metrics1 <%= metrics %> " >
+              <div class="metrics <%= metrics %> " >
               </div>
             </div>
             <div class="tile">
-              <div class="metrics2 <%= build %>">
+              <div class="metrics <%= build %>">
               </div>
             </div>
             <div class="tile">
-              <div class="metrics3 <%= unit_test %>">
+              <div class="metrics <%= unit_test %>">
               </div>
             </div>
             <div class="tile">
-              <div class="metrics4 <%= functional_test %>">
+              <div class="metrics <%= functional_test %>">
               </div>
             </div>
         </div><!---end of tiles---->
@@ -118,7 +105,6 @@
     </dt>
 
        <% if(state === 'pending') { %>
-
           <dd>
             <section id="pretest-info">
           <%= name %> <%= type %> is currently <%= state %>.<br>
@@ -131,11 +117,9 @@
 
           <% if(state === 'running') { %>
           <dd class="running-progress">
-
             <progress max="100" value="33"></progress><br>
-            <p> <%= App.localTime %> | This <%= type %> is currently <%= state %>.
-              <button>Pause</button><button>Cancel</button>
-
+            <p> <%= App.localTime %> | This <%= type %> is currently <%= state %>.     <button>Pause</button>
+              <button>Cancel</button>
             </p>
 
           </dd>
@@ -146,24 +130,31 @@
               <p>Metrics</p>
                 <div class="metrics-arrow-grid">
                   <div id="metric-test">
-                    <h3>34</h3>
+                    <h3><%= test %></h3>
                     <span class="entypo-up-bold"></span>
                     <p>Test</p>
                   </div>
                   <div id="metric-maintainability">
-                    <h3>67</h3>
+                    <h3><%= maintainability %></h3>
+
+                 <% if(state === 'rejected') { %>
+                      <span class="entypo-down-bold"></span>
+                      <% } %>
+                 <% if(state !== 'rejected') { %>
                     <span class="entypo-up-bold"></span>
+                    <% } %>
                     <p>Maintainability</p>
+
                   </div>
                   <div id="metric-security">
-                    <h3>54</h3>
-                    <span class="entypo-left-bold"></span>
-                    <p>Security</p>
+                    <h4><%= security %></h3>
+                    <span class="entypo-right-bold"></span>
+                    <p class="data">Security</p>
                   </div>
                   <div id="metric-workmanship">
-                    <h3>38</h3>
+                    <h4><%= workmanship %></h3>
                     <span class="entypo-right-bold"></span>
-                    <p>Workmanship</p>
+                    <p class="data">Workmanship</p>
                   </div>
                 </div>
             </div>
@@ -259,13 +250,7 @@
 
       </script>
 
-      <script type="text/template" id="addTemp">
-        <form id="addCoffee">
-          <input type="text" id="coffee_name" placeholder="Item Name" />
-          <button>Add Item</button>
-        </form>
-        <hr />
-      </script>
+
 
 
 
@@ -291,7 +276,6 @@
         <script src="scripts/plugins/accordion.js"></script>
         <script src="scripts/model.js"></script>
         <script src="scripts/collection.js"></script>
-        <script src="scripts/add_view.js"></script>
         <script src="scripts/list_view.js"></script>
         <script src="scripts/router.js"></script>
         <script src="scripts/main.js"></script>

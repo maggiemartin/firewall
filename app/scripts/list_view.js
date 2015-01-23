@@ -2,7 +2,7 @@
 
   App.Views.ListBuilds = Parse.View.extend({
 
-    //tagName: 'ul',
+
     className: 'Testing',
 
     events: {},
@@ -25,7 +25,6 @@
       ///begin pie chart svg here///
       (function ($, document) {
         $.fn.easyaspie = function () {
-
           var	size	= parseInt(this.data('size')),
           radius	= size / 2,
           value	= parseInt(this.data('value'));
@@ -37,8 +36,7 @@
             });
             return this;
           }
-
-          // is you trying to break things?
+          //only numbers here
           if (isNaN(value)) {
             return this;
           }
@@ -72,7 +70,6 @@
             var d = "M" + radius + "," + radius + " L" + radius + "," + 0 + ", A" + radius + "," + radius + " 0 " + longArc + ",1 " + (radius + y*radius) + "," + (radius - x*radius) + " z";
             this.pie.slice.setAttribute('d', d);
           }
-
           //add the slice to the pie.
           $(this.pie.slice).appendTo(this.pie);
 
@@ -94,22 +91,14 @@
 
         $('.Testing > section > dt > a').click(function() {
 
-
           allPanels.slideUp();
           allTiles.fadeIn();
-
           $(this).parent().next().slideDown();
-
           $(this).find('.tiles').hide();
           return false;
 
-
-
         });
-
-
       })(jQuery);
-
 
     },
 
@@ -136,7 +125,7 @@
       //     self.$el.append(self.template(c.toJSON()));
       //   })
       // } else {
-        // Sort from our default comparator in our collection constructor
+      // Sort from our default comparator in our collection constructor
         this.collection.sort();
 
         this.collection.each(function (c) {
@@ -148,10 +137,6 @@
 
 
       }
-
-
-
-
   });
 
 }());
