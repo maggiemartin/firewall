@@ -1,7 +1,6 @@
  // Bourbon & Neat
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
-
 @import url(http://weloveiconfonts.com/api/?family=fontawesome);
 
 $gray: hsl(0,0,84);
@@ -10,9 +9,6 @@ $gray: hsl(0,0,84);
 [class*="fontawesome-"]:before {
   font-family: 'FontAwesome', sans-serif;
 }
-
-
-
 
 [id*= "changelist-"]:before{
   font-family: 'FontAwesome', sans-serif;
@@ -120,7 +116,7 @@ p{
   background: linear-gradient(to right, rgba(235,241,248,1) 0%, rgba(235,241,248,1) 2%, rgba(235,241,248,1) 22%, rgba(252,252,252,1) 62%, rgba(255,255,255,1) 100%);
   margin-top: 10px;
   p{
-    color: $gray;
+    color: gray;
   }
 }
 
@@ -167,14 +163,14 @@ dt{
 }
 dd{
   //clear: both;
-  height: 170px;
+  height: 160px;
   width: 1075px;
   padding: 10px;
   margin: 0;
   color: blue;
   text-align:left;
-  //margin-top:-6px;
-  border: 1px solid $gray;
+  margin-bottom: 10px;
+  border: none;
   border-top:none;
 }
 &:last-of-type{
@@ -291,6 +287,7 @@ dd{
   background: -ms-linear-gradient(-45deg, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 32%, rgba(254,254,254,1) 100%);
   background: linear-gradient(135deg, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 32%, rgba(254,254,254,1) 100%);
   margin-left: 20px;
+
  p{
    position: absolute;
    margin: 10px;
@@ -328,21 +325,109 @@ dd{
   text-align: center;
     font-size: 9px;
   }
+
+  progress[value] {
+    /* Reset the default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+    margin-top: 105px;
+    margin-left: 20px;
+    width: 150px;
+
+    height: 26px;
+  }
+
+  progress[value]::-webkit-progress-bar {
+    background-color: #f7cbac;
+    border-radius: 2px;
+    //box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  }
+  progress[value]::-webkit-progress-value {
+    background-color: #c5e0b3;
+    border-radius: 2px;
+  }
+
 }
 
 
 .result-box{
-
+  position: relative;
   width: 190px;
   margin-top: -20px;
   height: 150px;
+  font-size: 13px;
+
   display: inline-block;
-  border: none;
+  //border: 1px dotted black;
   background-color: white;
+  p{
+    position: absolute;
+    margin-left: 40%;
+    color: black;
+    margin-top: 8px;
+  }
+  h2{
+    position: absolute;
+    text-align: center;
+    font-weight: 300;
+    width: 100%;
+
+    margin-left: 0;
+    font-size: 22px;
+    margin-top: 60px;
+  }
+  #button {
+  width: 80%;
+  margin-left: 10%;
+  position: absolute;
+  font-size: 12px;
+  margin-top: 90px;
+  padding: 5px;
+  background-color: #5b9bd5;
+
+    color: white;
+    text-align: center;
+  }
+  select{
+    position: absolute;
+    margin-top: 130px;
+    width: 70%;
+    margin-left: 15%;
+  }
 }
 }
+.fontawesome-search{
+  font-size: 10px;
+  margin-left: 15px;
+}
+.change_rejected, .change_accepted, .change_running,
+.change_pending{
+  font-size: 9px;
+  color: red;
+  width: 100%;
+  padding-top: 38px;
+  text-align: center;
+  position: absolute;
 
+}
+.result_Incomplete, .result_Metrics-Reduction{
+  color: red;
+}
+.change_accepted,.result_Auto-Merged{
+  color: hsl(44,99,53);
+}
 
+.change_running{
+  color: blue;
+}
+.change_pending{
+  color: gray;
+}
+
+.result_Complete{
+  color: green;
+}
 #Debug, #Release{
   color: #5b9bd5;
   position: absolute;
@@ -383,24 +468,46 @@ dd{
   }
 }
 
-progress[value] {
-  /* Reset the default appearance */
-  -webkit-appearance: none;
-  appearance: none;
-  position: absolute;
-  margin-top: 105px;
-  margin-left: 20px;
-  width: 150px;
 
-  height: 26px;
+
+#pretest-info{
+  padding-top: 40px;
+  text-align: center;
+  color: black;
+  font-size: 12px;
+  button{
+    padding: 5px;
+    margin-top: 10px;
+  }
 }
 
-progress[value]::-webkit-progress-bar {
-  background-color: #f7cbac;
-  border-radius: 2px;
-  //box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
-}
-progress[value]::-webkit-progress-value {
-  background-color: #c5e0b3;
-  border-radius: 2px;
+.running-progress{
+
+  progress[value] {
+    /* Reset the default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid gray;
+    margin-left: 20px;
+    width: 700px;
+    margin-top: 30px;
+    height: 40px;
+  }
+
+  progress[value]::-webkit-progress-bar {
+    background-color: #e4e4e4;
+    border-radius: 2px;
+    //box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  }
+  progress[value]::-webkit-progress-value {
+    background: -moz-linear-gradient(left, rgba(31,25,204,1) 0%, rgba(110,106,204,1) 46%, rgba(157,155,224,1) 97%, rgba(255,255,255,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(31,25,204,1)), color-stop(46%, rgba(110,106,204,1)), color-stop(97%, rgba(157,155,224,1)), color-stop(100%, rgba(255,255,255,1)));
+    background: -webkit-linear-gradient(left, rgba(31,25,204,1) 0%, rgba(110,106,204,1) 46%, rgba(157,155,224,1) 97%, rgba(255,255,255,1) 100%);
+    background: -o-linear-gradient(left, rgba(31,25,204,1) 0%, rgba(110,106,204,1) 46%, rgba(157,155,224,1) 97%, rgba(255,255,255,1) 100%);
+    background: -ms-linear-gradient(left, rgba(31,25,204,1) 0%, rgba(110,106,204,1) 46%, rgba(157,155,224,1) 97%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(to right, rgba(31,25,204,1) 0%, rgba(110,106,204,1) 46%, rgba(157,155,224,1) 97%, rgba(255,255,255,1) 100%);
+    border-radius: 2px;
+  }
+
+
 }

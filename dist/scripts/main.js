@@ -104,27 +104,6 @@ var DateFormat={};!function(a){var b=["Sunday","Monday","Tuesday","Wednesday","T
       // Get our Element On Our Page
       $('#buildList').html(this.$el);
 
-      (function($) {
-
-        var allPanels = $('.Testing > section > dd').hide();
-
-        var allTiles = $('.Testing > section > dt > a > .tiles').show();
-
-        $('.Testing > section > dt > a').click(function() {
-
-          allPanels.slideUp();
-          allTiles.fadeIn(500);
-
-          $(this).parent().next().slideDown();
-          $(this).find('.tiles').fadeOut(300);
-          return false;
-
-
-
-        });
-
-
-      })(jQuery);
 
       ///begin pie chart svg here///
       (function ($, document) {
@@ -190,6 +169,29 @@ var DateFormat={};!function(a){var b=["Sunday","Monday","Tuesday","Wednesday","T
       })(jQuery, document);
 
 
+      (function($) {
+
+        var allPanels = $('.Testing > section > dd').hide();
+
+        var allTiles = $('.Testing > section > dt > a > .tiles').show();
+
+        $('.Testing > section > dt > a').click(function() {
+
+          allPanels.slideUp();
+          allTiles.fadeIn();
+
+          $(this).parent().next().slideDown();
+          $(this).find('.tiles').hide();
+          return false;
+
+
+
+        });
+
+
+      })(jQuery);
+
+
     },
 
     render: function () {
@@ -200,7 +202,6 @@ var DateFormat={};!function(a){var b=["Sunday","Monday","Tuesday","Wednesday","T
 
       var divUtc = moment.utc().format('hh:mm a - MM/DD/YYYY');
       var localTime  = moment.utc(divUtc).toDate();
-
 
       localTime = moment(localTime).format('hh:mm a - MM/DD/YYYY');
       App.localTime = localTime

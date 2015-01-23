@@ -21,9 +21,9 @@
 
    <div class="body-container">
    <div class="titleList">
+
   <section>
      <dt>
-       <!--<a  href="">-->
          <ul>
            <li id="name">
             Changelist/Build
@@ -60,10 +60,6 @@
        </dt>
     </section>
 
-
-
-
-
    </div>
 
 
@@ -71,50 +67,67 @@
     </div>
   </div><!--end of body container-->
 
-    <script type="text/template" id="listTemp">
+  <script type="text/template" id="listTemp">
 
-      <section class="<%= state %>">
-        <dt>
-          <a  href="">
-            <ul>
+  <section class="<%= state %>">
+    <dt>
+      <a  href="">
+      <ul>
 
-              <li id="name">
-                <% if(type === 'changelist') { %>
-                <span class="fontawesome-table"></span>
-                <% } %>
+        <li id="name">
+        <% if(type === 'changelist') { %>
+        <span class="fontawesome-table"></span>
+        <% } %>
+        <% if(type === 'build') { %>
+        <span class="fontawesome-desktop"></span>
+        <% } %>
 
-                <% if(type === 'build') { %>
-                <span class="fontawesome-desktop"></span>
-                <% } %>
+        <%= name %></li>
+        <li id="owner"><%= owner %> </li>
+        <li id="timestart"><%= $.format.date(createdAt, "M/dd/yyyy h:mm a") %></li>
+        <li id="state"><%= state %></li>
 
-                <%= name %></li>
-
-                <li id="owner"><%= owner %> </li>
-                <li id="timestart"><%= $.format.date(createdAt, "M/dd/yyyy h:mm a") %></li>
-
-                <li id="state"><%= state %></li>
-              </ul>
-              <div class="tiles">
-                <div class="tile">
-
-                  <div class="metrics1 <%= metrics %> " >
-                  </div>
-                </div>
-                <div class="tile">
-                  <div class="metrics2 <%= build %>">
-                  </div>
-                </div>
-                <div class="tile">
-                  <div class="metrics3 <%= unit_test %>">
-                  </div>
-                </div>
-                <div class="tile">
-                  <div class="metrics4 <%= functional_test %>">
-                  </div>
-                </div>
+      </ul>
+        <div class="tiles">
+            <div class="tile">
+              <div class="metrics1 <%= metrics %> " >
               </div>
-            </a>
-          </dt>
+            </div>
+            <div class="tile">
+              <div class="metrics2 <%= build %>">
+              </div>
+            </div>
+            <div class="tile">
+              <div class="metrics3 <%= unit_test %>">
+              </div>
+            </div>
+            <div class="tile">
+              <div class="metrics4 <%= functional_test %>">
+              </div>
+            </div>
+        </div><!---end of tiles---->
+      </a>
+    </dt>
+
+          <% if(state === 'pending') { %>
+
+          <dd>
+            <section id="pretest-info">
+          <%= name %> <%= type %> is currently <%= state %>.<br>
+             <button>Configure</button>
+             <button>Cancel</button>
+            </section>
+          </dd>
+
+          <% } %>
+
+          <% if(state === 'running') { %>
+          <dd class="running-progress">
+
+            <progress max="100" value="33">
+          </dd>
+            <% } %>
+
           <dd class="<%= state %>">
             <div class="metrics-box" id="<%= metrics %>">
               <p>Metrics</p>
@@ -165,13 +178,48 @@
                 <span>code covered</span>
               </div>
 
-
-
-            </div><!---end of functional test--->
+            </div><!--end of functional test-->
 
             <div class="result-box">
+              <p>
+                Result:
+              </p>
+
+              <% if(type === 'changelist') { %>
+
+              <span class="change_<%= state %>">
+                Changes <%= state %>
+              </span>
+
+              <% } %>
+
+              <h2 id="result-header" class="result_<%= result %>">
+                <%= result %>
+              </h2>
+
+              <% if(result === 'Metrics-Reduction') { %>
+                <button id="button">Find Issues</button>
+              <% } %>
+
+              <% if(result === 'Complete') { %>
+                <button id="button">Deploy</button>
+                <select>
+                  <option value="Production">Production</option>
+                  <option value="Sandbox">Sandbox</option>
+                </select>
+                <% } %>
+
+                <% if(result === 'Auto-Merged') { %>
+                  <span id="button"><span class="fontawesome-search"></span>Merged Build</span>
+                <% } %>
+
+                <% if(result === 'Incomplete') { %>
+                  <span id="button">Initialize</span>
+                  <% } %>
             </div>
+
           </dd>
+
         </section>
 
       </script>
